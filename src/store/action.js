@@ -1,4 +1,5 @@
 // 对数据进行定义（type）与传递（payload）
+
 import {ADD,DEL} from "./config";
 export const add = (data)=>{
     return {

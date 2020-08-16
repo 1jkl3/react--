@@ -1,6 +1,6 @@
 // 这里对数据进行操作
-import {ADD,DEL} from "./config";
-import {payload} from './database';
+import { ADD, DEL } from "./config";
+import { payload } from "./database";
 // 默认数据
 // const payload = [{ name: "梨花", age: 18 }];
 export function redurcer(state = payload[0].name, action) {
