@@ -1,22 +1,23 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
 import StoreHandle from "../components/StoreHandle";
 import { connect } from "react-redux";
-import { mapStateToProps, mapDispatchToProps } from "../redux-handle";
+import { mapStateToProps, mapDispatchToProps } from "../store/handle";
 class About extends Component {
   handleADD(e) {
     const { actions } = this.props;
-    actions.add(e);
+    actions.add({name:e,age:22});
   }
   handleDEL(e) {
+    console.log(this.props);
     const { actions } = this.props;
-    actions.del(e);
+    actions.del(1);
   }
   render() {
-    const { name } = this.props;
+    const { user } = this.props;
+    console.log(this.props);
     return (
       <div>
-        我是关于页:{name}
+        我是关于页:{user}
         <StoreHandle
           onStoreADD={this.handleADD.bind(this)}
           onStoreDEL={this.handleDEL.bind(this)}
@@ -26,4 +27,4 @@ class About extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(About));
+export default connect(mapStateToProps, mapDispatchToProps)(About);

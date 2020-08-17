@@ -1,16 +1,16 @@
-import * as actions from "../store/action";
+import * as userAction from "../actions/user";
 import { bindActionCreators } from "redux";
 
-// 数据
+// 整合数据
 const mapStateToProps = (state) => {
   return {
-    name: state.redurcer,
+    user: state.userReducer,
   };
 };
-// 事件
+// 整合事件
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(actions, dispatch),
+    userAction: bindActionCreators(userAction, dispatch),
   };
 };
 export { mapStateToProps, mapDispatchToProps };
